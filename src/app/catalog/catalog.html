@@ -11,7 +11,7 @@
     <li class="product-item">
       <div class="product">
         <div class="product-details">
-          <img src="{{'images/robot-parts/' + product.imageName }}" [alt]="product.name" />
+          <img [src]="'images/robot-parts/' + product.imageName" [alt]="product.name" /> 
           <div class="product-info">
             <div class="name">{{product.name}}</div>
             <div class="description">{{product.description}}</div>
