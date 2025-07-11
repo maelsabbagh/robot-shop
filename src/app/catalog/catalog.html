@@ -26,12 +26,12 @@
           <div class="price">
             @if(product.discount===0)
             {
-              <div>${{ product?.price?.toFixed(2) }}</div>
+              <div>{{ product?.price | currency:'USD' }}</div>
             } 
             @else
             {
               <div class="discount">
-                ${{ (product.price * (1-product.discount)).toFixed(2)}}
+                {{ (product.price * (1-product.discount)) | currency:'USD'}}
               </div>
             }
             

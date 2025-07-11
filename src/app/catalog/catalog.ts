@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
