@@ -10,6 +10,7 @@ import { IProduct } from './product.model';
 export class Catalog 
 {
   products:IProduct[];
+  filter:string=''
 
   constructor()
   {
@@ -192,5 +193,17 @@ export class Catalog
   getImageUrl(product:IProduct)
   {
     return 'images/robot-parts/' + product.imageName;
+  }
+
+  getFilteredProducts()
+  {
+    if(this.filter==='')
+      {
+        return this.products;
+      }
+    else
+    {
+      return this.products.filter((p=>p.category===this.filter));
+    }
   }
 }
