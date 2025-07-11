@@ -24,7 +24,18 @@
             </div>
           </div>
           <div class="price">
-            <div>${{ product?.price?.toFixed(2) }}</div>
+            @if(product.discount===0)
+            {
+              <div>${{ product?.price?.toFixed(2) }}</div>
+            } 
+            @else
+            {
+              <div class="discount">
+                ${{ (product.price * (1-product.discount)).toFixed(2)}}
+              </div>
+            }
+            
+           
             <button class="cta">Buy</button>
           </div>
         </div>
