@@ -23,4 +23,9 @@ export class Catalog
       discount:0.2
     };
   }
+
+  getImageUrl()
+  {
+    return 'images/robot-parts/' + this.product.imageName;
+  }
 }
