@@ -24,8 +24,7 @@
             </div>
           </div>
           <div class="price">
-
-              <div [ngClass]="getDiscountedClasses(product)">
+              <div class="bold" [ngClass]="getDiscountedClasses(product)">
                 {{ product?.price | currency:'USD' }}
               </div>
             
