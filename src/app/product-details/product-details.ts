@@ -12,7 +12,6 @@ import { NgClass } from '@angular/common';
 export class ProductDetails 
 {
   @Input() product!:IProduct
-  cart:IProduct[]=[]
   getImageUrl(product:IProduct)
   {
     return 'images/robot-parts/' + product.imageName;
@@ -20,8 +19,7 @@ export class ProductDetails
 
    addToCart(product:IProduct)
   {
-     this.cart.push(product);
-      console.log(`product ${product.name} is added to cart`)
+     
   }
 
   // we can return a string or an array of strings
