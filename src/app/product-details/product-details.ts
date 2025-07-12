@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../catalog/product.model';
 import { CurrencyPipe } from '@angular/common';
 import { NgClass } from '@angular/common';
@@ -12,14 +12,15 @@ import { NgClass } from '@angular/common';
 export class ProductDetails 
 {
   @Input() product!:IProduct
+  @Output() buy= new EventEmitter();
   getImageUrl(product:IProduct)
   {
     return 'images/robot-parts/' + product.imageName;
   }
 
-   addToCart(product:IProduct)
+  buyButtonClicked(product:IProduct)
   {
-     
+     this.buy.emit();
   }
 
   // we can return a string or an array of strings
