@@ -13,6 +13,7 @@ export class Catalog
 {
   products:IProduct[];
   filter:string=''
+  cart:IProduct[] = [];
 
   constructor()
   {
@@ -219,5 +220,11 @@ export class Catalog
     }
     else return []
 
+  }
+
+  addToCart(product:IProduct)
+  {
+      this.cart.push(product);
+      console.log(`product ${product.name} is added to cart`)
   }
 }
