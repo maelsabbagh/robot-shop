@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 import { CurrencyPipe } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe,NgClass],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
@@ -206,5 +207,17 @@ export class Catalog
     {
       return this.products.filter((p=>p.category===this.filter));
     }
+  }
+
+  // we can return a string or an array of strings
+  // we may need to make an array and based on some logic/conditions to push values to this array
+  getDiscountedClasses(product:IProduct)
+  {
+    if(product.discount>0)
+    {
+      return ['strikethrough']
+    }
+    else return []
+
   }
 }

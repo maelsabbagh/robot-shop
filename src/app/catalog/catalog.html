@@ -25,7 +25,7 @@
           </div>
           <div class="price">
 
-              <div [class.strikethrough]="product.discount>0">
+              <div [ngClass]="getDiscountedClasses(product)">
                 {{ product?.price | currency:'USD' }}
               </div>
             
