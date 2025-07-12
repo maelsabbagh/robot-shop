@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
-import { CurrencyPipe } from '@angular/common';
-import { NgClass } from '@angular/common';
+import { ProductDetails } from "../product-details/product-details";
+
 
 @Component({
   selector: 'app-catalog',
-  imports: [CurrencyPipe,NgClass],
+  imports: [ProductDetails],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
@@ -193,10 +193,7 @@ export class Catalog
 ]
   }
 
-  getImageUrl(product:IProduct)
-  {
-    return 'images/robot-parts/' + product.imageName;
-  }
+
 
   getFilteredProducts()
   {
@@ -210,17 +207,7 @@ export class Catalog
     }
   }
 
-  // we can return a string or an array of strings
-  // we may need to make an array and based on some logic/conditions to push values to this array
-  getDiscountedClasses(product:IProduct)
-  {
-    if(product.discount>0)
-    {
-      return ['strikethrough']
-    }
-    else return []
-
-  }
+  
 
   addToCart(product:IProduct)
   {
