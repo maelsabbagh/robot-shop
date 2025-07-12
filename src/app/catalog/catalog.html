@@ -24,11 +24,12 @@
             </div>
           </div>
           <div class="price">
-            @if(product.discount===0)
-            {
-              <div>{{ product?.price | currency:'USD' }}</div>
-            } 
-            @else
+
+              <div [class.strikethrough]="product.discount>0">
+                {{ product?.price | currency:'USD' }}
+              </div>
+            
+            @if(product.discount>0)
             {
               <div class="discount">
                 {{ (product.price * (1-product.discount)) | currency:'USD'}}
