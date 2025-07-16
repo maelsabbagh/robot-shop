@@ -60,7 +60,7 @@
             },
             "development": {
               "buildTarget": "robot-shop:build:development",
-              "proxyConfig": "/src/proxy.conf.json"
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
