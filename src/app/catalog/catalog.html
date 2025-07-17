@@ -1,14 +1,14 @@
 <div class="container">
   <div class="filters">
-    <a routerLink="/catalog" [queryParams]="{filter:'Heads'}" class="button" >Heads </a>
-    <a routerLink="/catalog" [queryParams]="{filter:'Arms'}" class="button" >Arms </a>
-    <a routerLink="/catalog" [queryParams]="{filter:'Torsos'}" class="button" >Torsos</a>
-    <a routerLink="/catalog" [queryParams]="{filter:'Bases'}" class="button" >Bases</a>
-    <a routerLink="/catalog" class="button" >All</a> 
-    <!-- binding router link because in app.routes we are defining
-     the route: /catalog/:filter
-     so we need to tell angular there is an empty string
-     so this is done by the array instead of directly string -->
+    <a routerLink="/catalog" [queryParams]="{filter:'Heads'}" routerLinkActive="active"  class="button" >Heads </a>
+    <a routerLink="/catalog" [queryParams]="{filter:'Arms'}"  routerLinkActive="active" class="button" >Arms </a>
+    <a routerLink="/catalog" [queryParams]="{filter:'Torsos'}"routerLinkActive="active" class="button" >Torsos</a>
+    <a routerLink="/catalog" [queryParams]="{filter:'Bases'}" routerLinkActive="active" class="button" >Bases</a>
+    <a routerLink="/catalog" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="button" >All</a> 
+   <!-- 
+    routerLinkActive uses starts with when dealing with URL
+    which is true for "All" option in all other options so we use exact to match the full URL
+   -->
   </div>
 
 

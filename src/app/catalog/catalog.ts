@@ -3,12 +3,12 @@ import { IProduct } from './product.model';
 import { ProductDetails } from "../product-details/product-details";
 import { CartService } from '../cart/cart-service';
 import { ProductService } from './product-service';
-import { ActivatedRoute, Router,RouterLink } from '@angular/router';
+import { ActivatedRoute, Router,RouterLink,RouterLinkActive } from '@angular/router';
 
 
 @Component({
   selector: 'app-catalog',
-  imports: [ProductDetails,RouterLink],
+  imports: [ProductDetails,RouterLink,RouterLinkActive],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
