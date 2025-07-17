@@ -34,7 +34,7 @@ export class Catalog implements OnInit
      this._productService.getProducts().subscribe(p=>{
       this.products=p;
 
-      this.route.params.subscribe((params)=>{
+      this.route.queryParams.subscribe((params)=>{
         this.filter=params['filter']??'';
       })
      });  
